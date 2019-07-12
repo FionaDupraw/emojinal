@@ -20,13 +20,20 @@ class ViewController: UIViewController {
     }
     
     @IBAction func showMessage(sender: UIButton) {
+        let selectedEmotion = sender.titleLabel?.text
+        let emojis = ["🍩" : "donut", "🥦" : "broccoli"]
         
-        let alertController = UIAlertController(title: "Broccoli", message: "Good Choice. You will live long.", preferredStyle: UIAlertController.Style.alert)
-        alertController.addAction(UIAlertAction(title: "Um thx?", style: UIAlertAction.Style.default, handler: nil))
+        "donut"; ["Donut... very unhealthy you are." , "DONUT YUMMMMM YUM YUM!", "*Beware... in the next 24 hours, you may have a donut thrown at you.*", "You should eat some broccoli some time."]
+        
+        "broccoli"; ["Broccoli. Good choice, you will live long.", "Broccoli... are you sure you chose correctly? JK broccoli is always the right choice.", "You deserve a donut."]
+        
+        let emojiMessage = emojis[selectedEmotion!]
+
+        let alertController = UIAlertController(title: "Food Choice", message: emojis[selectedEmotion!], preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "Sure...", style: UIAlertAction.Style.default, handler: nil))
         self.present(alertController, animated: true, completion: nil)
         
         
     }
-
 }
 
